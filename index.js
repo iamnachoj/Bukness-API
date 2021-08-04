@@ -22,7 +22,7 @@ app.use(bodyParser.json()); // will parse JSON
 // });
 
 // Atlas DB
-mongoose.connect(process.env.CONNECTION_URI, {
+mongoose.connect('mongodb+srv://nacho:<password>@bukness-cluster.0wnyc.mongodb.net/buknessDB?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
