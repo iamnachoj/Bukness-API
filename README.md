@@ -17,21 +17,24 @@ The easiest way to get started is to clone the repository:
  - cd Book API
  - Install NPM dependencies
  - Start the server Note: It is recommended to install nodemon for live reloading - It watches for any changes in your node.js app and automatically restarts the server
- - Deployment
- - Deployment to Heroku
+
+
+ ## Deployment
+ ###  Deployment to Heroku
+ 
  - Download and install Heroku CLI
 
-In a terminal, run heroku login and enter your Heroku credentials
+ - In a terminal, run heroku login and enter your Heroku credentials
 
-From your app directory run heroku create
+ - From your app directory run heroku create
 
-Use the command heroku config:set KEY=val to set the different environment variables (KEY=val) for your application (i.e. heroku config:set BASE_URL=[heroku App Name].herokuapp.com etc.)
+ - Use the command heroku config:set KEY=val to set the different environment variables (KEY=val) for your application (i.e. heroku config:set BASE_URL=[heroku App Name].herokuapp.com etc.)
 
-Do git add .
+ - Do git add .
 
-Do git commit -m" reason for commit"
+ - Do git commit -m" reason for commit"
 
-Lastly, do git push heroku master.
+ - Lastly, do git push heroku master.
 
 Please note that you may also use the Heroku Dashboard to set or modify the configurations for your application.
 
