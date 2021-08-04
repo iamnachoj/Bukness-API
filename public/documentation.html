@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Book API</title>
+  </head>
+  <body>
+    <h1>Book API documentation</h1>
+    <h3>API goal</h3>
+    <p>
+      Our book API is set to build the server-side component of a books web
+      application. The web application will provide users with access to
+      information about different books about business, management, personal
+      growth, emotional intelligence, and many more. Users will be
+      able to sign up, update their personal information, and create a list of
+      their favorite books. It is necessary to login (and therefore, register)
+      before doing absolutely anything. To register, go to /register and add
+      name, password, email, and a birth date (format yyyy/mm/dd).
+    </p>
+    <h3>URL Endpoints</h3>
+    <ul>
+      <li>
+        <em>GET "/API/books":</em> Deploys as a response a list of all the
+        books in our Database. Requires registration and login (see POST login
+        and POST register).
+      </li>
+      <li>
+        <em>GET "/API/books/:title" :</em> Deploys as a response the selected
+        books by title. Requires registration and login (see POST login and POST
+        register).
+      </li>
+      <li>
+        <em>POST "/users" :</em> allows to sign up. Requires a name,
+        password, email, and a birth date (format yyyy/mm/dd). Responses with
+        the brand-new created user in JSON.
+      </li>
+      <li>
+        <em>POST "/users/:Username/Books/:BookID" :</em> allows you to add a
+        book to your favourite books list. Requires registration and login
+        (see POST login and POST register)
+      </li>
+      <li>
+        <em>POST "/login" :</em> allows you to access to your account by
+        inserting user name and password. Afterwards, you will receive a JWT
+        with which you will be allowed to enter to the rest of the endpoints.
+      </li>
+      <li>
+        <em>PUT "/users/:Name" : </em> updates user's info. Expects JSON in this
+        format: { Name: String, (required) Password: String, (required) Email:
+        String, (required) Birthday: Date }. Requires registration and login
+        (see POST login and POST register)
+      </li>
+      <li>
+        <em>DELETE "/users/:Username/Books/:BookID" :</em> allows you to
+        remove a book to your favourite books list. Requires registration and
+        login (see POST login and POST register)
+      </li>
+      <li>
+        <em>DELETE "/users/:Username" :</em> allows you to remove your user.
+        Requires registration and login (see POST login and POST register)
+      </li>
+      <!-- I don´t know which endpoint should I use for push or pull favourite books from user profile -->
+    </ul>
+    <hr />
+    <a href="/">Back to homepage</a>
+  </body>
+</html>
