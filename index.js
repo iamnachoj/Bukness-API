@@ -16,16 +16,16 @@ const Users = Models.User;
 app.use(bodyParser.json()); // will parse JSON
 
 //Local DB
-mongoose.connect("mongodb://localhost:27017/buknessDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-// Atlas DB
-// mongoose.connect(process.env.CONNECTION_URI, {
+// mongoose.connect("mongodb://localhost:27017/buknessDB", {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
+
+// Atlas DB
+mongoose.connect(process.env.CONNECTION_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.use(morgan("common")); // just to log info on console about http requests
 app.use(express.static("public")); // this allows files to fetch statically, within the public folder
