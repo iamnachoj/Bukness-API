@@ -4,7 +4,7 @@ const passport = require("passport"),
   passportJWT = require("passport-jwt");
 
 let Users = Models.User,
-  JWTStrategy = passportJWT.Strategy,
+  JWTStrategy = passportJWT.Strategy, //add web token
   ExtractJWT = passportJWT.ExtractJwt;
 
 passport.use(
@@ -38,7 +38,7 @@ passport.use(
   )
 );
 
-passport.use(
+passport.use( 
   new JWTStrategy(
     {
       jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),

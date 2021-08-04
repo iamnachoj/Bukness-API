@@ -31,7 +31,7 @@ userSchema.methods.validatePassword = function (password) {
   return bcrypt.compareSync(password, this.Password);
 }; //what compares submitted hashed passwords with the hashed passwords stored in your database.
 
-let Book = mongoose.model("Book", bookSchema);
+let Book = mongoose.model("Book", bookSchema); 
 let User = mongoose.model("User", userSchema);
 
 module.exports.Book = Book;
