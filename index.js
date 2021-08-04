@@ -16,7 +16,7 @@ const Users = Models.User;
 app.use(bodyParser.json()); // will parse JSON
 
 //Local DB
-mongoose.connect("mongodb://localhost:27017/myFlixDB", {
+mongoose.connect("mongodb://localhost:27017/buknessDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -55,7 +55,7 @@ app.get(
   "/API/books",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Books.find()
+    books.find()
       .then((books) => res.json(books))
       .catch((error) => {
         console.error(error);
@@ -69,7 +69,7 @@ app.get(
   "/API/books/:title",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Books.find({ Title: req.params.title })
+    books.find({ Title: req.params.title })
       .then((book) => res.json(book))
       .catch((error) => {
         console.error(error);
