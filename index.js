@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const morgan = require("morgan"); // require Morgan
 const bodyParser = require("body-parser"); // require body-parser
 const express = require("express"); // require Express
@@ -53,7 +55,7 @@ app.get("/documentation", (req, res) => {
 // GET all books
 app.get(
   "/API/books",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
     books.find()
       .then((books) => res.json(books))
